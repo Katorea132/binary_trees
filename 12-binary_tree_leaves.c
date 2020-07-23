@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * counte - COunts
+ * counte - Counts
  * @tree: tree
  * @count: Counter
  * Return: size_t

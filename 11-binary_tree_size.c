@@ -2,7 +2,7 @@
 
 
 /**
- * counter - COunts
+ * counter - Counts
  * @tree: tree
  * @count: Counter
  * Return: size_t

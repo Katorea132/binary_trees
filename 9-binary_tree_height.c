@@ -1,7 +1,7 @@
 #include "binary_trees.h"
 
 /**
- * sizerY - FInds height
+ * sizerY - Finds height
  * @tree: Tree
  * Return: sizes
  */
