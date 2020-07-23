@@ -76,7 +76,7 @@ int binary_tree_b(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	if (binary_tree_is_f(tree) && binary_tree_b(tree) == 0)
+	if (tree && binary_tree_is_f(tree) && binary_tree_b(tree) == 0)
 		return (1);
 	return (0);
 }
