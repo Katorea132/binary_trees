@@ -62,9 +62,9 @@ int binary_tree_b(const binary_tree_t *tree)
 	int l = 0, r = 0;
 
 	if (tree && tree->left)
-		l = binary_tree_h(tree->left) + 1;
+		l = binary_tree_h(tree->left);
 	if (tree && tree->right)
-		r = binary_tree_h(tree->right) + 1;
+		r = binary_tree_h(tree->right);
 
 	return (l - r);
 }
