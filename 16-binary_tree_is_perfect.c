@@ -1,38 +1,25 @@
 #include "binary_trees.h"
 
-/**
- * fully - finds full nodes
- * @tree: tree
- * @full: full or nah
- * Return: full or nah
- */
-int fully(const binary_tree_t *tree, int full)
+size_t counter(const binary_tree_t *tree, size_t count)
 {
-	if (tree && full >= 0)
+
+	if (tree)
 	{
-		if ((!tree->left && !tree->right) ||
-		(tree->left && tree->right))
-		{
-			full = 1;
-			full = fully(tree->left, full), full = fully(tree->right, full);
-		}
-		else
-			full = -1;
+		count++;
+		count = counter(tree->left, count);
+		count = counter(tree->right, count);
 	}
-	return (full);
+	return (count);
 }
 
 /**
- * binary_tree_is_f - is it full or nah
+ * binary_tree_size - FInds size
  * @tree: Tree
- * Return: 0 if not full, 1 if full
+ * Return: size of the tree
  */
-int binary_tree_is_f(const binary_tree_t *tree)
+size_t size(const binary_tree_t *tree)
 {
-	int full = 0;
-
-	full = fully(tree, 0);
-	return (full <= 0 ? 0 : 1);
+	return (counter(tree, 0));
 }
 
 /**
@@ -56,7 +43,7 @@ size_t sizerY(const binary_tree_t *tree)
  * @tree: Tree
  * Return: size
  */
-size_t binary_tree_h(const binary_tree_t *tree)
+size_t height(const binary_tree_t *tree)
 {
 	if (!tree)
 		return (0);
@@ -69,13 +56,7 @@ size_t binary_tree_h(const binary_tree_t *tree)
  */
 int binary_tree_is_perfect(const binary_tree_t *tree)
 {
-	int l = 0, r = 0;
+	int h = height(tree), s = (int)size(tree);
 
-	if (tree && tree->left)
-		l = binary_tree_h(tree->left) + 1;
-	if (tree && tree->right)
-		r = binary_tree_h(tree->right) + 1;
-	if (tree && binary_tree_is_f(tree) && l - r == 0)
-		return (1);
-	return (0);
+	return (s == (2 << h) - 1 ? 1 : 0);
 }
