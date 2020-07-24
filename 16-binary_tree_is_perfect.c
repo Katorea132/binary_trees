@@ -1,5 +1,11 @@
 #include "binary_trees.h"
 
+/**
+ * counter - Counts
+ * @tree: tree
+ * @count: Counter
+ * Return: size_t
+ */
 size_t counter(const binary_tree_t *tree, size_t count)
 {
 
@@ -13,7 +19,7 @@ size_t counter(const binary_tree_t *tree, size_t count)
 }
 
 /**
- * binary_tree_size - FInds size
+ * size - FInds size
  * @tree: Tree
  * Return: size of the tree
  */
@@ -39,7 +45,7 @@ size_t sizerY(const binary_tree_t *tree)
 }
 
 /**
- * binary_tree_h - Height
+ * height - Height
  * @tree: Tree
  * Return: size
  */
